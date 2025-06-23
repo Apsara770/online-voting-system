@@ -11,15 +11,15 @@ Features:
 - Organized File Structure Easy to navigate and extend.
 Project Structure:
 online-voting-system
-	Admin:css , dashboard.php, manage-candidates, manage-elections,results.php,voters.php
-	voter:css , dashboard.php, history.php,vote.php
-	assets :css ,images, js
-	includes:db.php ,auth.php ,functions.ph
-	sql : online_voting_system.sql
-	index.php
-	login.php
-	register.php
-	logout.php
+-	Admin:css , dashboard.php, manage-candidates, manage-elections,results.php,voters.php
+-	voter:css , dashboard.php, history.php,vote.php
+-	assets :css ,images, js
+-	includes:db.php ,auth.php ,functions.ph
+-	sql : online_voting_system.sql
+-	index.php
+-	login.php
+-	register.php
+-	logout.php
 
 Technologies Used:
 - PHP (Backend)

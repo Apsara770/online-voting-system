@@ -9,8 +9,8 @@ Features:
 - Voting System Voters can vote once per election.
 - Live Results Admin can view results with vote counts and charts.
 - Organized File Structure Easy to navigate and extend.
-Project Structure:
-online-voting-system
+Project Structure
+  (online-voting-system)
 -	Admin:css , dashboard.php, manage-candidates, manage-elections,results.php,voters.php
 -	voter:css , dashboard.php, history.php,vote.php
 -	assets :css ,images, js

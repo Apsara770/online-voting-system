@@ -1,0 +1,523 @@
+/* admin/css/admin-style.css */
+
+/* --- General Admin Layout --- */
+.admin-wrapper {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f0f2f5; /* Light background for the overall admin area */
+    transition: margin-left 0.3s ease; /* For sidebar collapse effect */
+}
+
+/* Sidebar Styling */
+.admin-sidebar {
+    width: 250px;
+    background-color: #2c3e50; /* Darker blue-gray for sidebar */
+    color: #ecf0f1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Keep sidebar visible */
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow-y: auto; /* Enable scrolling for long navs */
+    transition: width 0.3s ease;
+    z-index: 1000; /* Ensure sidebar is above other content if overlapping */
+}
+
+.sidebar-header {
+    padding: 0 20px 30px;
+    text-align: center;
+}
+
+.sidebar-logo-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.4em;
+    font-weight: 700;
+}
+
+.sidebar-logo-link img {
+    height: 35px;
+    margin-right: 10px;
+}
+
+.sidebar-logo-link span {
+    color: #007bff; /* Primary color highlight for "Admin" */
+    letter-spacing: 0.5px;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li {
+    margin-bottom: 0px;
+}
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    padding: 15px 10px;
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 1.05em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    height: 100px;
+    
+}
+
+.sidebar-nav a .fas {
+    margin-right: 20px;
+    font-size: 1.2em;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+    background-color: #007bff; /* Primary blue for active/hover */
+    color: #fff;
+}
+
+/* Main Content Area */
+.admin-main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-main-header {
+    background-color: #ffffff;
+    padding: 20px 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.admin-main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ensure container takes full width of its parent */
+    max-width: 1200px; /* Adjust max-width as per your global.css container */
+    margin: 0 auto; /* Center the content if container is smaller than parent */
+}
+
+
+.admin-main-header .welcome-message {
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #34495e;
+}
+
+
+.admin-main-header .btn-logout {
+    background-color: #dc3545; /* Red for logout */
+    border-color: #dc3545;
+    color: #fff;
+    padding: 8px 15px;
+    font-size: 0.9em;
+    border-radius: 5px;
+}
+
+.admin-main-header .btn-logout:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+.toggle-sidebar-btn {
+    display: none; /* Hidden by default, shown on smaller screens */
+    background: none;
+    border: none;
+    color: #34495e;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.admin-content-area {
+    flex-grow: 1;
+    padding: 30px;
+}
+
+.admin-content-area h1 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.admin-main-footer {
+    background-color: #ffffff;
+    color: #777;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.85em;
+    border-top: 1px solid #e0e0e0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.03);
+    margin-top: auto; /* Push footer to the bottom */
+}
+
+
+/* --- Dashboard Specific Stats --- */
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    margin-bottom: 20px;
+    justify-content: center;
+    gap: 20px;
+}
+
+.stat-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    width: 250px;;
+    border-bottom: 5px solid transparent; /* Placeholder for color accent */
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Color accents for stat cards (optional, can be based on specific card content) */
+.stat-card:nth-child(1) { border-color: #007bff; } /* Blue for Elections */
+.stat-card:nth-child(2) { border-color: #28a745; } /* Green for Candidates */
+.stat-card:nth-child(3) { border-color: #ffc107; } /* Yellow for Voters */
+.stat-card:nth-child(4) { border-color: #dc3545; } /* Red for Votes */
+
+
+.stat-card .stat-icon {
+    font-size: 3em;
+    color: #007bff; /* Default icon color */
+    margin-bottom: 15px;
+}
+.stat-card:nth-child(1) .stat-icon { color: #007bff; }
+.stat-card:nth-child(2) .stat-icon { color: #28a745; }
+.stat-card:nth-child(3) .stat-icon { color: #ffc107; }
+.stat-card:nth-child(4) .stat-icon { color: #dc3545; }
+
+
+.stat-card h3 {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.stat-card .stat-number {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #34495e;
+}
+
+
+/* --- Recent Activity Section --- */
+.recent-activity-section {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-top: 30px;
+}
+
+.recent-activity-section h2 {
+    font-size: 1.8em;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    text-align: left; /* Align title left within section */
+}
+
+/* Generic Table Styles (reused for recent votes and potentially other admin tables) */
+.table-responsive {
+    overflow-x: auto; /* Enables horizontal scrolling on small screens */
+    width: 100%;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse; /* Removes spacing between table cells */
+    margin-top: 15px;
+    font-size: 0.95em;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px; /* Rounded corners for the table */
+    overflow: hidden; /* Ensures border-radius applies to contents */
+}
+
+.data-table thead {
+    background-color: #4a6682; /* Slightly different header for admin tables */
+    color: #fff;
+}
+
+.data-table th {
+    padding: 15px 20px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 1px solid #5a7ea8;
+}
+
+.data-table tbody tr {
+    background-color: #fff;
+    border-bottom: 1px solid #eee; /* Light border between rows */
+}
+
+.data-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Zebra striping */
+}
+
+.data-table tbody tr:hover {
+    background-color: #f0f2f5; /* Highlight row on hover */
+}
+
+.data-table td {
+    padding: 15px 20px;
+    vertical-align: middle;
+    color: #333;
+}
+
+/* Specific column widths for recent-votes-table (adjusted for 3 columns) */
+.recent-votes-table th:nth-child(1),
+.recent-votes-table td:nth-child(1) {
+    width: 35%; /* Election Title */
+}
+
+.recent-votes-table th:nth-child(2),
+.recent-votes-table td:nth-child(2) {
+    width: 35%; /* Candidate */
+}
+
+.recent-votes-table th:nth-child(3),
+.recent-votes-table td:nth-child(3) {
+    width: 30%; /* Voter */
+}
+
+.no-records-message {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-style: italic;
+    background-color: #fdfdfd;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    margin-top: 20px;
+}
+.no-records-message .fas {
+    margin-right: 10px;
+    color: #777;
+}
+
+/* --- Responsive Adjustments --- */
+
+/* Sidebar collapse for medium screens */
+@media (max-width: 992px) {
+    .admin-sidebar {
+        width: 60px; /* Collapsed width */
+        padding: 20px 0;
+        /* When collapsed, keep it fixed to the left */
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        height: 100vh;
+        overflow-y: auto;
+        z-index: 1001; /* Ensure it overlays content if needed for transition */
+    }
+    .admin-sidebar .sidebar-header {
+        padding: 0 5px 20px;
+    }
+    .admin-sidebar .sidebar-logo-link span {
+        display: none; /* Hide text when collapsed */
+    }
+    .admin-sidebar .sidebar-logo-link img {
+        margin-right: 0;
+    }
+    .admin-sidebar .sidebar-nav a {
+        justify-content: center; /* Center icons */
+        padding: 15px 0;
+    }
+    .admin-sidebar .sidebar-nav a .fas {
+        margin-right: 0; /* Remove icon margin */
+    }
+    .admin-sidebar .sidebar-nav a span {
+        display: none; /* Hide link text */
+    }
+
+    .admin-main-content {
+        margin-left: 60px; /* Offset main content by sidebar width */
+    }
+
+    /* State when sidebar is explicitly collapsed (toggled) */
+    .admin-wrapper.sidebar-collapsed .admin-sidebar {
+        width: 250px; /* Expand on toggle */
+    }
+    .admin-wrapper.sidebar-collapsed .admin-sidebar .sidebar-logo-link span {
+        display: inline;
+    }
+    .admin-wrapper.sidebar-collapsed .admin-sidebar .sidebar-logo-link img {
+        margin-right: 10px;
+    }
+    .admin-wrapper.sidebar-collapsed .admin-sidebar .sidebar-nav a {
+        justify-content: flex-start;
+        padding: 15px 20px;
+    }
+    .admin-wrapper.sidebar-collapsed .admin-sidebar .sidebar-nav a .fas {
+        margin-right: 15px;
+    }
+    .admin-wrapper.sidebar-collapsed .admin-sidebar .sidebar-nav a span {
+        display: inline;
+    }
+    .admin-wrapper.sidebar-collapsed .admin-main-content {
+        margin-left: 250px; /* Offset main content by expanded sidebar width */
+    }
+
+
+    .admin-main-header .toggle-sidebar-btn {
+        display: block; /* Show toggle button */
+    }
+    .admin-main-header .welcome-message {
+        /* On medium screens, you might choose to show or hide this based on preference */
+        /* display: none; */ /* Hidden by default in the previous version, can remain so */
+        font-size: 1em; /* Adjust size if displayed */
+    }
+}
+
+/* For small screens (mobile) */
+@media (max-width: 768px) {
+    .admin-wrapper {
+        flex-direction: column; /* Stack sidebar and main content vertically */
+    }
+    .admin-sidebar {
+        width: 100%; /* Full width sidebar when stacked */
+        height: auto; /* Auto height */
+        position: relative; /* No sticky on small screens */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding-bottom: 0; /* Adjust padding for mobile nav */
+    }
+    .admin-sidebar .sidebar-nav ul {
+        display: flex; /* Make nav items inline for horizontal scrolling */
+        overflow-x: auto; /* Allow horizontal scroll if many items */
+        -webkit-overflow-scrolling: touch; /* Smoother scrolling on iOS */
+        padding-bottom: 10px; /* Space for scrollbar if needed */
+        justify-content: flex-start; /* Align to start */
+    }
+    .admin-sidebar .sidebar-nav li {
+        flex-shrink: 0; /* Prevent items from shrinking */
+        margin: 0 10px; /* Space between horizontal items */
+    }
+    .admin-sidebar .sidebar-nav a {
+        padding: 10px 15px;
+        flex-direction: column; /* Stack icon and text */
+        font-size: 0.85em; /* Smaller font size */
+        border-radius: 5px;
+    }
+    .admin-sidebar .sidebar-nav a .fas {
+        margin-right: 0;
+        margin-bottom: 5px; /* Space between icon and text */
+        font-size: 1.1em;
+    }
+    .admin-sidebar .sidebar-logo-link {
+        margin-bottom: 20px; /* Space below logo */
+    }
+
+    /* Reset sidebar-collapsed state for mobile - it acts as a full-width header/nav */
+    .admin-wrapper.sidebar-collapsed .admin-sidebar {
+        width: 100%;
+        position: relative; /* Reset position */
+    }
+    .admin-wrapper.sidebar-collapsed .admin-sidebar .sidebar-nav a span {
+        display: inline; /* Always show text on mobile */
+    }
+    .admin-wrapper.sidebar-collapsed .admin-main-content {
+        margin-left: 0; /* No margin on mobile */
+    }
+
+    .admin-main-content {
+        margin-left: 0; /* No margin due to sidebar */
+        width: 100%;
+    }
+    .admin-main-header {
+        padding: 15px 20px;
+        justify-content: space-between; /* Ensure space for toggle */
+    }
+    .admin-main-header .welcome-message {
+        display: block; /* Can show welcome message if space allows */
+        font-size: 0.9em;
+    }
+    .admin-main-header .toggle-sidebar-btn {
+        display: none; /* Hide toggle button on very small screens if nav is always visible */
+    }
+    .admin-content-area {
+        padding: 20px;
+    }
+    .admin-content-area h1 {
+        font-size: 2em;
+        margin-bottom: 25px;
+    }
+    .dashboard-stats {
+        grid-template-columns: 1fr; /* Stack stat cards on very small screens */
+        gap: 20px;
+    }
+    .stat-card {
+        padding: 25px;
+    }
+
+    .recent-activity-section {
+        padding: 25px;
+    }
+    .recent-activity-section h2 {
+        font-size: 1.6em;
+    }
+    .data-table {
+        font-size: 0.85em;
+    }
+    .data-table th, .data-table td {
+        padding: 10px;
+    }
+    .recent-votes-table th:nth-child(1),
+    .recent-votes-table td:nth-child(1),
+    .recent-votes-table th:nth-child(2),
+    .recent-votes-table td:nth-child(2),
+    .recent-votes-table th:nth-child(3),
+    .recent-votes-table td:nth-child(3) {
+        width: auto; /* Let content define width more flexibly on mobile */
+        white-space: nowrap; /* Prevent wrapping for better readability in horizontal scroll */
+    }
+}
+
+/* Even smaller screens if needed, or refine 768px breakpoint further */
+@media (max-width: 480px) {
+    .admin-main-header .welcome-message {
+        display: none; /* Hide again for smallest screens to prioritize space */
+    }
+    .admin-sidebar .sidebar-nav ul {
+        flex-wrap: nowrap; /* Keep items in one line for horizontal scroll */
+        justify-content: flex-start;
+    }
+    .admin-sidebar .sidebar-nav li {
+        margin: 0 5px; /* Tighter spacing */
+    }
+    .admin-sidebar .sidebar-nav a {
+        font-size: 0.8em;
+        padding: 8px 12px;
+    }
+    .admin-sidebar .sidebar-nav a .fas {
+        font-size: 1em;
+    }
+    .admin-content-area h1 {
+        font-size: 1.6em;
+    }
+}

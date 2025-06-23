@@ -1,0 +1,271 @@
+/* General Form Styling */
+.add-election-form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+    border: 1px solid #e0e0e0;
+}
+
+.add-election-form h2 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    text-align: center;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.add-election-form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #34495e;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.add-election-form input[type="text"],
+.add-election-form input[type="datetime-local"],
+.add-election-form textarea {
+    width: calc(100% - 22px); /* Account for padding and border */
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.add-election-form input[type="text"]:focus,
+.add-election-form input[type="datetime-local"]:focus,
+.add-election-form textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+    outline: none;
+}
+
+.add-election-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.05em;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #28a745; /* Green for add/update */
+    color: white;
+    margin-right: 15px;
+}
+
+.btn-primary:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(40, 167, 69, 0.3);
+}
+
+.btn-secondary {
+    background-color: #6c757d; /* Gray for cancel */
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(108, 117, 125, 0.3);
+}
+
+.btn-warning {
+    background-color: #ffc107; /* Yellow for edit */
+    color: #343a40;
+    padding: 8px 15px;
+    font-size: 0.9em;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+    transform: translateY(-1px);
+}
+
+.btn-danger {
+    background-color: #dc3545; /* Red for delete */
+    color: white;
+    padding: 8px 15px;
+    font-size: 0.9em;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    transform: translateY(-1px);
+}
+
+/* Table Styling */
+.election-list {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+}
+
+.election-list h2 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    text-align: center;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.data-table thead th {
+    background-color: #3498db;
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 1.05em;
+    border-bottom: 2px solid #2980b9;
+}
+
+.data-table tbody tr {
+    border-bottom: 1px solid #dee2e6;
+    transition: background-color 0.2s ease;
+}
+
+.data-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.data-table tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+.data-table tbody td {
+    padding: 15px;
+    vertical-align: middle;
+    color: #495057;
+    font-size: 0.95em;
+}
+
+.data-table tbody td:last-child {
+    white-space: nowrap; /* Prevents action buttons from wrapping */
+}
+
+.data-table tbody td .btn {
+    margin-right: 5px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .add-election-form,
+    .election-list {
+        padding: 20px;
+    }
+
+    .add-election-form h2,
+    .election-list h2 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+
+    .add-election-form input[type="text"],
+    .add-election-form input[type="datetime-local"],
+    .add-election-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.95em;
+        margin-right: 10px;
+        margin-bottom: 10px; /* For stacking on smaller screens */
+    }
+
+    .data-table, .data-table thead, .data-table tbody, .data-table th, .data-table td, .data-table tr {
+        display: block;
+    }
+
+    .data-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .data-table tr {
+        margin-bottom: 15px;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .data-table tbody td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+    }
+
+    .data-table tbody td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+        color: #34495e;
+    }
+
+    /* Assign data-label to each td in PHP for better accessibility and styling */
+    .data-table tbody td:nth-of-type(1)::before { content: "Title:"; }
+    .data-table tbody td:nth-of-type(2)::before { content: "Description:"; }
+    .data-table tbody td:nth-of-type(3)::before { content: "Start:"; }
+    .data-table tbody td:nth-of-type(4)::before { content: "End:"; }
+    .data-table tbody td:nth-of-type(5)::before { content: "Status:"; }
+    .data-table tbody td:nth-of-type(6)::before { content: "Action:"; }
+
+    .data-table tbody td:last-child {
+        text-align: right;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn {
+        width: 100%;
+        margin-right: 0;
+    }
+}

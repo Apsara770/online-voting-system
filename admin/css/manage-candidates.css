@@ -1,0 +1,110 @@
+/* Form Styling for Add Candidate */
+.add-candidate-form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+    border: 1px solid #e0e0e0;
+}
+
+.add-candidate-form h2 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    text-align: center;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.add-candidate-form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #34495e;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.add-candidate-form select,
+.add-candidate-form input[type="text"],
+.add-candidate-form textarea,
+.add-candidate-form input[type="file"] {
+    width: calc(100% - 22px); /* Account for padding and border */
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.add-candidate-form select:focus,
+.add-candidate-form input[type="text"]:focus,
+.add-candidate-form textarea:focus,
+.add-candidate-form input[type="file"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+    outline: none;
+}
+
+.add-candidate-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.add-candidate-form input[type="file"] {
+    padding-top: 10px; /* Adjust padding for file input */
+}
+
+/* Button Styling (Assuming btn-primary is already defined in election-manager.css or a global CSS) */
+.add-candidate-form .btn-primary {
+    background-color: #28a745; /* Green for add */
+    color: white;
+    margin-right: 0; /* No right margin for single button */
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.05em;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.add-candidate-form .btn-primary:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(40, 167, 69, 0.3);
+}
+
+/* Responsive Adjustments for Form */
+@media (max-width: 768px) {
+    .add-candidate-form {
+        padding: 20px;
+    }
+
+    .add-candidate-form h2 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+
+    .add-candidate-form select,
+    .add-candidate-form input[type="text"],
+    .add-candidate-form textarea,
+    .add-candidate-form input[type="file"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+
+    .add-candidate-form .btn-primary {
+        width: 100%;
+        padding: 10px 20px;
+        font-size: 0.95em;
+    }
+}

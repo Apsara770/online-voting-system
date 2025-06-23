@@ -1,0 +1,160 @@
+/* Login Page Specific Styles */
+
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Take full viewport height */
+    background: linear-gradient(135deg, #007bff 0%, #6a11cb 100%); /* Same gradient as hero section for consistency */
+    padding: 20px; /* Add padding for small screens */
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    max-width: 450px; /* Limit the width of the login form */
+    width: 100%; /* Ensure it takes full width within max-width */
+    text-align: center;
+    animation: fadeInScale 0.6s ease-out forwards; /* Fade in animation */
+}
+
+.login-container .form-title {
+    font-size: 2.2em;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+/* Error Message Styling */
+.error-message {
+    background-color: #f8d7da; /* Light red */
+    color: #721c24; /* Dark red text */
+    border: 1px solid #f5c6cb;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 25px;
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Space between icon and text */
+}
+
+.error-message .fas {
+    color: #dc3545; /* Red icon */
+    font-size: 1.2em;
+    background-color: transparent; /* Override global icon background */
+    width: auto; /* Override global icon width */
+    height: auto; /* Override global icon height */
+    margin: 0; /* Override global icon margin */
+    box-shadow: none; /* Remove icon shadow */
+}
+
+
+/* Form Input Styling */
+.input-group {
+    margin-bottom: 25px;
+    text-align: left; /* Align label and input text to left */
+}
+
+.input-group label {
+    display: block;
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.input-group input[type="email"],
+.input-group input[type="password"] {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1.05em;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input[type="email"]:focus,
+.input-group input[type="password"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Focus highlight */
+    outline: none; /* Remove default outline */
+}
+
+/* Placeholder Styling */
+.input-group input::placeholder {
+    color: #adb5bd;
+    font-style: italic;
+}
+
+/* Login Button Specific Styles */
+.login-form button[type="submit"] {
+    margin-top: 20px; /* Space above the button */
+    font-size: 1.1em;
+    padding: 15px 25px;
+    border-radius: 8px;
+    letter-spacing: 0.5px;
+}
+
+/* Signup Link */
+.signup-link {
+    margin-top: 30px;
+    font-size: 1em;
+    color: #666;
+}
+
+.signup-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.signup-link a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Animations (re-using from index.css for consistency) */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 500px) {
+    .login-container {
+        padding: 30px 20px;
+        margin: 0 15px; /* Add some margin on very small screens */
+    }
+
+    .login-container .form-title {
+        font-size: 1.8em;
+        margin-bottom: 25px;
+    }
+
+    .input-group input {
+        padding: 12px 15px;
+        font-size: 1em;
+    }
+
+    .login-form button[type="submit"] {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+
+    .error-message {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+}

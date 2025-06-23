@@ -1,0 +1,362 @@
+/* General Vote Section Styling */
+.vote-section {
+    padding: 30px;
+    background-color: #f4f7f6;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.vote-section h2 {
+    font-size: 2.2em;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Message Styling (Success/Error) */
+.message {
+    padding: 15px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid transparent;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Election List and Card Styling */
+.election-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.election-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.election-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.election-title {
+    font-size: 1.7em;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #e0e0e0;
+    padding-bottom: 10px;
+}
+
+.election-description {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.election-dates {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.election-dates i {
+    margin-right: 8px;
+    color: #3498db;
+}
+
+/* Vote Form and Candidate Options - Modified for Table-like Display */
+.vote-form {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensure form takes full height of card */
+}
+
+.candidate-options-grid {
+    display: table; /* Use table display for tabular layout */
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+    flex-grow: 1;
+    border: 1px solid #e0e0e0; /* Add outer border to the "table" */
+    border-radius: 8px;
+    overflow: hidden; /* Ensures rounded corners for children */
+}
+
+.candidate-options-grid label.candidate-option-card {
+    display: table-row; /* Each label is a table row */
+    background-color: #f9f9f9;
+    border: none; /* Remove individual card borders */
+    border-bottom: 1px solid #e9ecef; /* Add row separator */
+    border-radius: 0; /* Remove individual card rounded corners */
+    padding: 0; /* Reset padding here, apply to cells */
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+    box-shadow: none; /* Remove individual card shadows */
+}
+
+.candidate-options-grid label.candidate-option-card:last-child {
+    border-bottom: none; /* No border for the last row */
+}
+
+.candidate-options-grid label.candidate-option-card:hover {
+    background-color: #eaf6fd;
+    border-color: #e9ecef; /* Keep the existing row separator color */
+    transform: none; /* Remove hover transform for table rows */
+    box-shadow: none;
+}
+
+.candidate-option-card input[type="radio"] {
+    display: table-cell; /* Radio button as a table cell */
+    vertical-align: middle;
+    padding: 15px; /* Padding for the radio button cell */
+    width: 30px; /* Fixed width for radio column */
+    text-align: center;
+    border-right: 1px solid #e9ecef; /* Separator for radio column */
+    border-radius: 0;
+    margin: 0; /* Remove default margin */
+    -webkit-appearance: none; /* Hide default radio button */
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    border: 2px solid #ccc; /* Custom radio button border */
+    border-radius: 50%; /* Make it a circle */
+    width: 20px; /* Size of the custom radio button */
+    height: 20px;
+    flex-shrink: 0; /* Prevent it from shrinking */
+    transition: background-color 0.2s, border-color 0.2s;
+    position: relative;
+    cursor: pointer;
+}
+
+.candidate-option-card input[type="radio"]::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 0.2s;
+}
+
+.candidate-option-card input[type="radio"]:checked {
+    border-color: #3498db; /* Blue border when checked */
+    background-color: #fff; /* Keep background white */
+}
+
+.candidate-option-card input[type="radio"]:checked::after {
+    background-color: #3498db; /* Blue dot when checked */
+}
+
+.candidate-info {
+    display: table-cell; /* Candidate info as a table cell */
+    vertical-align: middle;
+    padding: 15px; /* Padding for info cells */
+    color: #495057;
+}
+
+.candidate-name {
+    font-size: 1.1em; /* Slightly smaller than before to fit table */
+    color: #333;
+    display: inline-block; /* Allow party to be on same line or wrap naturally */
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
+.candidate-party {
+    font-size: 0.85em; /* Smaller font for party */
+    color: #666;
+    display: inline-block;
+    margin-left: 8px; /* Space between name and party */
+    font-weight: normal;
+}
+
+.candidate-bio {
+    font-size: 0.85em; /* Smaller font for bio */
+    color: #777;
+    line-height: 1.4;
+    margin-top: 5px; /* Space above bio */
+    display: block; /* Ensure bio takes new line */
+}
+
+.no-candidates {
+    text-align: center;
+    color: #777;
+    font-style: italic;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    margin-top: 15px;
+    display: table-row; /* Treat as a table row for consistency */
+}
+.no-candidates p {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 20px;
+}
+
+
+/* Form Buttons */
+.form-buttons {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    gap: 15px;
+    margin-top: auto; /* Push buttons to the bottom of the card */
+    padding-top: 15px;
+    border-top: 1px dashed #e0e0e0;
+}
+
+.btn-submit-vote {
+    background-color: #28a745; /* Green */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.05em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-submit-vote:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(40, 167, 69, 0.3);
+}
+
+
+/* No Elections Message */
+.no-elections-message {
+    text-align: center;
+    padding: 40px;
+    background-color: #e9f5ff;
+    border: 1px solid #b3d9ff;
+    border-radius: 12px;
+    color: #34495e;
+    font-size: 1.1em;
+    margin-top: 30px;
+}
+
+.no-elections-message i {
+    font-size: 2em;
+    color: #3498db;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.no-elections-message p {
+    margin-bottom: 10px;
+}
+
+.no-elections-message a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.no-elections-message a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    /* No longer using grid for candidate options, so this is less relevant here */
+}
+
+@media (min-width: 1024px) {
+    /* No longer using grid for candidate options, so this is less relevant here */
+}
+
+@media (max-width: 767px) {
+    .election-list {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+
+    .election-card {
+        padding: 20px;
+    }
+
+    .election-title {
+        font-size: 1.5em;
+    }
+
+    .election-description {
+        font-size: 0.95em;
+    }
+
+    .candidate-options-grid label.candidate-option-card {
+        /* On small screens, keep them stacked, but retain table-row behavior for consistency */
+        display: table-row;
+    }
+
+    .candidate-option-card input[type="radio"],
+    .candidate-info {
+        display: table-cell; /* Still table-cells */
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .candidate-name {
+        font-size: 1em;
+    }
+
+    .candidate-party {
+        font-size: 0.8em;
+    }
+
+    .candidate-bio {
+        font-size: 0.8em;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-submit-vote,
+    .btn-outline {
+        width: 100%;
+        text-align: center;
+    }
+}

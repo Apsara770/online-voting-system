@@ -1,0 +1,171 @@
+/* Basic Reset & Box-Sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body & Typography */
+body {
+    font-family: 'Inter', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /* A modern sans-serif font */
+    line-height: 1.6;
+    color: #333; /* Dark gray for good readability */
+    background-color: #f8f9fa; /* Light, subtle background */
+    -webkit-font-smoothing: antialiased; /* Better font rendering */
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.5em;
+    color: #2c3e50; /* A darker shade for headings */
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.8em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.8em; }
+p { margin-bottom: 1em; }
+
+/* Base Button Styles */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+    white-space: nowrap; /* Prevents text from wrapping on buttons */
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Primary Button (e.g., Get Started, Vote Now) */
+.btn-primary {
+    background-color: #007bff; /* Vibrant blue */
+    color: #fff;
+    border: 2px solid #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Secondary Button (e.g., Learn More, View All FAQs) */
+.btn-secondary {
+    background-color: transparent;
+    color: #007bff;
+    border: 2px solid #007bff;
+}
+
+.btn-secondary:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Navigation Primary Button (Login in Nav) */
+.btn-primary-nav {
+    background-color: #007bff;
+    color: #fff;
+    border: 2px solid #007bff;
+}
+.btn-primary-nav:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Navigation Outline Button (Register in Nav) */
+.btn-outline-nav {
+    background-color: transparent;
+    color: #fff; /* White text as it's on a dark header */
+    border: 2px solid #fff; /* White border */
+}
+.btn-outline-nav:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly visible background on hover */
+    color: #fff;
+}
+
+/* Specific Sizes */
+.btn-small {
+    padding: 8px 18px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+}
+
+.btn-large {
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+}
+
+/* Disabled Button */
+.btn-disabled {
+    background-color: #cccccc;
+    color: #666;
+    border-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.8;
+    transform: none;
+    box-shadow: none;
+}
+.btn-disabled:hover {
+    background-color: #cccccc; /* Prevent hover effect */
+    border-color: #cccccc;
+    color: #666;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Section Common Styling */
+section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+section:nth-of-type(even) { /* Alternate background for sections */
+    background-color: #f0f2f5;
+}
+
+/* Font Awesome Icons Styling */
+.fas {
+    display: inline-flex; /* Use flex to center the icon inside */
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: #007bff; /* Example background for icons */
+    border-radius: 50%;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 2em; /* Adjust as needed */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

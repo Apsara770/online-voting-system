@@ -55,6 +55,7 @@ if ($selected_election_id) {
     <title>Election Results | Admin</title>
     <link rel="stylesheet" href="../assets/css/myglobal.css">
     <link rel="stylesheet" href="css/myadmin-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
